@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en" class="hydrated">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet Profile Registration</title>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule="" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+
+  <style>
+    * {
+      font-family: "Poppins", sans-serif;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      user-select: none;
+      overflow-y: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #dde5f4;
+      min-height: 100vh;
+      margin: 0;
+      padding: 1em;
+    }
+
+    .screen-1 {
+      background: #f1f7fe;
+      padding: 2em;
+      display: flex;
+      flex-direction: column;
+      border-radius: 30px;
+      box-shadow: 0 0 2em #e6e9f9;
+      max-width: 800px;
+      width: 100%;
+      gap: 2em;
+      margin: 2em 0;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5em;
+    }
+
+    .input-group {
+      background: white;
+      box-shadow: 0 0 2em #e6e9f9;
+      padding: 1em;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5em;
+      border-radius: 20px;
+      color: #4d4d4d;
+    }
+
+    .input-group input,
+    .input-group select,
+    .input-group textarea {
+      outline: none;
+      border: none;
+      font-size: 1em;
+    }
+
+    .input-group input::placeholder,
+    .input-group textarea::placeholder {
+      color: #aaa;
+      font-size: 0.9em;
+    }
+
+    .input-group ion-icon {
+      color: #4d4d4d;
+      margin-bottom: -0.2em;
+    }
+
+    .screen-1 .register-btn {
+      padding: 1em;
+      background: #3e4684;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-weight: 600;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: center;
+      font-size: 0.9em;
+      color: #5e5e5e;
+      gap: 0.5em;
+      padding-bottom: 1em;
+    }
+
+    .footer span {
+      cursor: pointer;
+      color: #3e4684;
+      font-weight: 600;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .screen-1 {
+        padding: 1.5em;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .screen-1 {
+        padding: 1em;
+      }
+
+      .register-btn {
+        padding: 0.8em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="screen-1">
+    <h2 style="text-align: center; margin-bottom: 0;">Register Pet Profile</h2>
+    <div class="form-grid">
+      <div class="input-group">
+        <label for="username">Username</label>
+        <ion-icon name="person-outline"></ion-icon>
+        <input type="text" id="username" placeholder="Enter username">
+      </div>
+
+      <div class="input-group">
+        <label for="password">Password</label>
+        <ion-icon name="lock-closed-outline"></ion-icon>
+        <input type="password" id="password" placeholder="Enter password">
+      </div>
+
+      <div class="input-group">
+        <label for="confirm-password">Confirm Password</label>
+        <ion-icon name="lock-closed-outline"></ion-icon>
+        <input type="password" id="confirm-password" placeholder="Confirm password">
+      </div>
+
+      <div class="input-group">
+        <label for="pet-name">Pet’s Name</label>
+        <ion-icon name="paw-outline"></ion-icon>
+        <input type="text" id="pet-name" placeholder="Enter pet's name">
+      </div>
+
+      <div class="input-group">
+        <label for="breed">Breed/Type</label>
+        <ion-icon name="git-branch-outline"></ion-icon>
+        <input type="text" id="breed" placeholder="Enter breed or type">
+      </div>
+
+      <div class="input-group">
+        <label for="dob">Date of Birth (or Age)</label>
+        <ion-icon name="calendar-outline"></ion-icon>
+        <input type="date" id="dob">
+      </div>
+
+      <div class="input-group">
+        <label for="weight">Weight</label>
+        <ion-icon name="barbell-outline"></ion-icon>
+        <input type="text" id="weight" placeholder="Enter weight (kg)">
+      </div>
+
+      <div class="input-group">
+        <label for="gender">Gender</label>
+        <ion-icon name="male-female-outline"></ion-icon>
+        <select id="gender">
+          <option value="">Select Gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <label for="temperament">Temperament</label>
+        <ion-icon name="happy-outline"></ion-icon>
+        <input type="text" id="temperament" placeholder="e.g., Playful, Shy">
+      </div>
+
+      <div class="input-group">
+        <label for="medical-history">Medical History</label>
+        <ion-icon name="medkit-outline"></ion-icon>
+        <textarea id="medical-history" placeholder="e.g., Vaccinations, Allergies"></textarea>
+      </div>
+
+      <div class="input-group">
+        <label for="activities">Favorite Activities</label>
+        <ion-icon name="heart-outline"></ion-icon>
+        <input type="text" id="activities" placeholder="e.g., Fetch, Swimming">
+      </div>
+
+      <div class="input-group" style="grid-column: span 2;">
+        <label for="photo-upload">Photo/Avatar Upload</label>
+        <ion-icon name="image-outline"></ion-icon>
+        <input type="file" id="photo-upload">
+      </div>
+    </div>
+
+    <button class="register-btn">Register Pet</button>
+
+    <div class="footer">
+      Already Registered? <span onclick="window.location.href='edit-profile.html'">Login</span>
+    </div>
+  </div>
+</body>
+</html>
